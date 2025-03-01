@@ -29,10 +29,11 @@
               </router-link>
 
               <li class="nav-item">
-                <router-link to="/about" class="nav-link">
-                  <i class="fas fa-info-circle me-1"></i>Info
-                </router-link>
-              </li>
+  <router-link to="/about" class="nav-link">
+    <i class="fas fa-info-circle me-1"></i>Info
+  </router-link>
+</li>
+
             </ul>
           </div>
         </div>
