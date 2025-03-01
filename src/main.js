@@ -18,10 +18,10 @@ import ContactPage from './views/ContactPage.vue'
 
 // Configurar rutas
 const routes = [
-    { path: '/', component: HomePage },
+    { path: '/home', component: HomePage },
     { path: '/about', component: AboutPage },
     { path: '/contact', component: ContactPage },
-    { path: '/:pathMatch(.*)*', redirect: '/' } ,
+    { path: '/:pathMatch(.*)*', redirect: '/home' } ,
 ]
 const router = createRouter({
     history: createWebHistory(),
