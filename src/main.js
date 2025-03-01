@@ -21,6 +21,7 @@ const routes = [
     { path: '/', component: HomePage },
     { path: '/about', component: AboutPage },
     { path: '/contact', component: ContactPage },
+    { path: '/:pathMatch(.*)*', redirect: '/' } ,
 ]
 const router = createRouter({
     history: createWebHistory(),
