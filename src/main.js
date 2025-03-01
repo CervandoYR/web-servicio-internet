@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from 'vue-router';
-
+import { createRouter, createWebHashHistory  } from 'vue-router'
 import App from './App.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -18,15 +17,16 @@ import AboutPage from './views/AboutPage.vue'
 import ContactPage from './views/ContactPage.vue'
 
 // Configurar rutas
+const routes = [
+    { path: '/', component: HomePage },
+    { path: '/about', component: AboutPage },
+    { path: '/contact', component: ContactPage },
+    { path: '/:pathMatch(.*)*', redirect: '/' },
+]
 const router = createRouter({
-    history: createWebHashHistory(), // Cambiar WebHistory a WebHashHistory
-    routes: [
-      { path: '/', component: HomePage },
-      { path: '/about', component: AboutPage },
-      { path: '/contact', component: ContactPage },
-      { path: '/:pathMatch(.*)*', redirect: '/' },
-    ]
-  });
+    history: createWebHashHistory('/web-servicio-internet/'), // Define el prefijo de las rutas
+    routes
+})
 
 // Crear aplicación
 const app = createApp(App)
