@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
         <div class="container">
           <!-- Logo -->
-          <router-link to="/" class="navbar-brand fw-bold">
+          <router-link to="/" class="navbar-brand fw-bold" @click.prevent="scrollToHome">
             <i class="bi bi-globe2 me-2"></i>NetSystems
           </router-link>
 
@@ -57,6 +57,12 @@ export default {
     toggleNavbar() {
       this.showNavbar = !this.showNavbar;
     },
+    scrollToHome() {
+    const homeSection = document.getElementById("home");
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   },
 };
 </script>
