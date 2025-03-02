@@ -24,15 +24,21 @@
                 <i class="fas fa-list-alt me-1"></i>Planes
               </router-link>
 
+              <li class="nav-item">
+                <a class="nav-link" href="#info">
+                  <i class="fas fa-star me-1"></i>Beneficios
+                </a>
+              </li>
+
               <router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
                 <i class="fas fa-envelope me-1"></i>Contacto
               </router-link>
 
               <li class="nav-item">
-  <router-link to="/about" class="nav-link">
-    <i class="fas fa-info-circle me-1"></i>Info
-  </router-link>
-</li>
+                <router-link to="/about" class="nav-link">
+                  <i class="fas fa-info-circle me-1"></i>Info
+                </router-link>
+              </li>
 
             </ul>
           </div>
@@ -135,4 +141,22 @@ export default {
 .shadow-sm {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 991px) { 
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .nav-item, .nav-link {
+    width: 100%;
+  }
+}
+
 </style>

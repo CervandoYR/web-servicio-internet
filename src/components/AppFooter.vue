@@ -7,10 +7,10 @@
         <div class="col-md-4 mb-3">
           <h5 class="text-uppercase">Contacto</h5>
           <p>
-            <i class="bi bi-envelope me-2"></i>info@miempresa.com
+            <i class="bi bi-envelope me-2"></i>servitektechnologies@gmail.com
           </p>
           <p>
-            <i class="bi bi-telephone me-2"></i>+1 (234) 567-890
+            <i class="bi bi-telephone me-2"></i>+51 924 076 526
           </p>
         </div>
 
@@ -35,7 +35,7 @@
 
         <!-- Derechos Reservados -->
         <div class="col-md-4 mb-3 text-center text-md-end">
-          <h5 class="text-uppercase">&copy; 2024 Mi Empresa</h5>
+          <h5 class="text-uppercase">&copy; 2024 Servitek Technologies</h5>
           <p>Todos los derechos reservados</p>
         </div>
       </div>

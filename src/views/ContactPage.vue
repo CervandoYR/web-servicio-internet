@@ -3,10 +3,10 @@
     <div class="contact-page container p-5 shadow rounded-3 bg-light">
       <h1 class="text-center mb-4 text-primary fw-bold">Contáctanos</h1>
       <p class="text-center text-muted mb-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit...
+        ¿Tienes alguna consulta? Envíanos un mensaje y te responderemos pronto.
       </p>
       <Form ref="contactForm" @submit="submitForm" v-slot="{ meta }" class="animate__animated animate__fadeIn">
-        <div class="mb-4">
+        <div class="contact-background mb-4">
           <label for="name" class="form-label text-primary fw-semibold">Nombre</label>
           <Field
             type="text"
@@ -52,8 +52,11 @@
             @mouseover="hoverSubmit = true"
             @mouseleave="hoverSubmit = false"
           >
-            <span v-if="!isSubmitting">Enviar</span>
-            <span v-else class="animate__animated animate__fadeIn">Enviando...</span>
+          <span v-if="!isSubmitting">Enviar</span>
+             <span v-else class="animate__animated animate__fadeIn">
+                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                 Enviando...
+              </span>
           </button>
         </div>
       </Form>
@@ -136,37 +139,65 @@ export default {
 };
 </script>
 
-<style>
-.contact-page {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 60px;
+<style scoped>
+/* Espaciado superior para que no esté tan junto a la sección anterior */
+.contact-section {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+
+.container {
+  max-width: 700px;
+  background: linear-gradient(135deg, #f8f9fa, #dee2e6);
+}
+
+.input-custom {
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.textarea-custom {
+  height: 150px;
+  resize: none;
 }
 
 .fixed-textarea {
-  height: 180px;
+  height: 110px;
   resize: none;
+}
+
+.submit-button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-primary:hover {
   background-color: rgb(0, 0, 255) !important;
 }
 
-.form-control {
-  font-size: 1.1rem;
+.submit-button:hover {
+  background-color: #0056b3 !important;
+  transform: scale(1.05);
 }
 
-.form-label {
-  font-size: 1.1rem;
-}
-
-.error-message {
-  font-size: 0.9rem;
+.submit-button:disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
 }
 
 .submit-button.sending {
   background-color: #ffc107 !important;
   border-color: #ffc107 !important;
   cursor: not-allowed;
+}
+
+.error-message {
+  font-size: 0.9rem;
 }
 </style>
