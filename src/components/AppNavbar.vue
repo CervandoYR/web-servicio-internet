@@ -25,7 +25,7 @@
               </router-link>
 
               <li class="nav-item">
-                <a class="nav-link" href="#info">
+                <a class="nav-link" href="#info" @click="closeNavbar()">
                   <i class="fas fa-star me-1"></i>Beneficios
                 </a>
               </li>
@@ -35,11 +35,10 @@
               </router-link>
 
               <li class="nav-item">
-                <router-link to="/about" class="nav-link">
+                <router-link to="/about" class="nav-link" @click="closeNavbar()">
                   <i class="fas fa-info-circle me-1"></i>Info
                 </router-link>
               </li>
-
             </ul>
           </div>
         </div>
@@ -61,7 +60,11 @@ export default {
     toggleNavbar() {
       this.showNavbar = !this.showNavbar;
     },
+    closeNavbar() {
+      this.showNavbar = false;
+    },
     scrollToHome() {
+      this.closeNavbar(); // Cierra el navbar después de hacer clic
       if (this.$route.path !== "/") {
         this.$router.push("/").then(() => {
           setTimeout(() => {
@@ -79,6 +82,7 @@ export default {
       }
     },
     scrollToSection(sectionId) {
+      this.closeNavbar(); // Cierra el navbar después de hacer clic
       if (this.$route.path !== "/") {
         this.$router.push("/").then(() => {
           setTimeout(() => {
@@ -98,6 +102,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .navbar {
