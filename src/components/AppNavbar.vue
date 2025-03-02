@@ -24,12 +24,10 @@
                 <i class="fas fa-list-alt me-1"></i>Planes
               </router-link>
 
-              <li class="nav-item">
-                <a class="nav-link" href="#info" @click="closeNavbar()">
-                  <i class="fas fa-star me-1"></i>Beneficios
-                </a>
-              </li>
-
+              <router-link to="/" class="nav-link" @click="scrollToSection('info')">
+                <i class="fas fa-star me-1"></i>Beneficios
+              </router-link>
+              
               <router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
                 <i class="fas fa-envelope me-1"></i>Contacto
               </router-link>

@@ -42,7 +42,7 @@
 <style scoped>
 /* Fondo con degradado */
 .contact-section {
-    margin-top: 4rem;
+    margin-top: -1.5rem;
     padding: 2rem 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 10px;

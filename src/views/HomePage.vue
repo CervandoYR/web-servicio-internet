@@ -412,7 +412,7 @@ export default {
     }
 
     .moving-text {
-        font-size: 2.7vw; /* Aumenta el tamaño de fuente en dispositivos móviles */
+        font-size: 3.6vw; /* Aumenta el tamaño de fuente en dispositivos móviles */
     }
 
     .decorative-banner {
