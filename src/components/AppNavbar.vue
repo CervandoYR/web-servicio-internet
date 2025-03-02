@@ -112,7 +112,13 @@ export default {
 .content {
   margin-top: 70px;
   transition: margin-top 0.3s ease-in-out;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
 }
+
 
 .navbar-collapse.show+.content {
   margin-top: auto;
@@ -142,21 +148,5 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 991px) { 
-  .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .navbar-nav {
-    width: 100%;
-  }
-
-  .nav-item, .nav-link {
-    width: 100%;
-  }
-}
 
 </style>
