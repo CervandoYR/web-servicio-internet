@@ -37,6 +37,13 @@
                   <i class="fas fa-info-circle me-1"></i>Info
                 </router-link>
               </li>
+
+              <li class="nav-item">
+                <router-link to="/cobertura" class="nav-link" @click="closeNavbar()">
+                  <i class="fas fa-wifi me-1"></i>Cobertura
+                </router-link>
+              </li>
+              
             </ul>
           </div>
         </div>
