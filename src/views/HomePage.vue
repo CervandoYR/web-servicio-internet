@@ -161,6 +161,10 @@ export default {
     margin-top: 60px;
     transition: transform 0.3s ease;
 }
+
+.plan-box p{
+    font-size: 30px;
+}
 .plan-box:hover {
     transform: scale(1.05);
 }

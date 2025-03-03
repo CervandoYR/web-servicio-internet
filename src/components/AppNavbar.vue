@@ -27,23 +27,23 @@
               <router-link to="/" class="nav-link" @click="scrollToSection('info')">
                 <i class="fas fa-star me-1"></i>Beneficios
               </router-link>
-              
+
               <router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
                 <i class="fas fa-envelope me-1"></i>Contacto
               </router-link>
 
               <li class="nav-item">
-                <router-link to="/about" class="nav-link" @click="closeNavbar()">
+                <router-link to="/about" class="nav-link" @click="closeNavbarAbout()">
                   <i class="fas fa-info-circle me-1"></i>Info
                 </router-link>
               </li>
 
               <li class="nav-item">
-                <router-link to="/cobertura" class="nav-link" @click="closeNavbar()">
+                <router-link to="/cobertura" class="nav-link" @click="closeNavbarCobertura()">
                   <i class="fas fa-wifi me-1"></i>Cobertura
                 </router-link>
               </li>
-              
+
             </ul>
           </div>
         </div>
@@ -65,45 +65,64 @@ export default {
     toggleNavbar() {
       this.showNavbar = !this.showNavbar;
     },
+    closeNavbarAbout() {
+      this.showNavbar = false;
+      this.$router.push("/about").then(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    },
+    closeNavbarCobertura() {
+      this.showNavbar = false;
+      this.$router.push("/cobertura").then(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    },
     closeNavbar() {
       this.showNavbar = false;
     },
     scrollToHome() {
-      this.closeNavbar(); // Cierra el navbar después de hacer clic
-      if (this.$route.path !== "/") {
-        this.$router.push("/").then(() => {
-          setTimeout(() => {
-            const homeSection = document.getElementById("home");
-            if (homeSection) {
-              homeSection.scrollIntoView({ behavior: "smooth" });
-            }
-          }, 300);
-        });
-      } else {
-        const homeSection = document.getElementById("home");
-        if (homeSection) {
-          homeSection.scrollIntoView({ behavior: "smooth" });
-        }
+  this.closeNavbar();
+
+  // Detecta si viene desde /about o /cobertura
+  const fromInfoOrCobertura = this.$route.path === "/about" || this.$route.path === "/cobertura";
+
+  if (fromInfoOrCobertura) {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+
+  this.$router.push("/").then(() => {
+    setTimeout(() => {
+      if (!fromInfoOrCobertura) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
+    }, 100);
+  });
     },
     scrollToSection(sectionId) {
       this.closeNavbar(); // Cierra el navbar después de hacer clic
       if (this.$route.path !== "/") {
         this.$router.push("/").then(() => {
           setTimeout(() => {
-            const section = document.getElementById(sectionId);
-            if (section) {
-              section.scrollIntoView({ behavior: "smooth" });
-            }
+            this.scrollToElement(sectionId);
           }, 300);
         });
       } else {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          section.scrollIntoView({ behavior: "smooth" });
-        }
+        this.scrollToElement(sectionId);
+      }
+    },
+    scrollToElement(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        const yOffset = -80; 
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
       }
     }
+
   },
 };
 </script>
@@ -123,10 +142,10 @@ export default {
   margin-top: 70px;
   transition: margin-top 0.3s ease-in-out;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
 }
 
 
@@ -157,6 +176,4 @@ export default {
 .shadow-sm {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-
 </style>

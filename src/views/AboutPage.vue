@@ -31,7 +31,7 @@
                         style="border:0;"
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2506275334596!2d-77.03687138528341!3d-12.046374445756135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c84d3e0c2c6d%3A0x2b9c3f907ef3b7a6!2sPlaza%20Mayor%20de%20Lima!5e0!3m2!1ses-419!2spe!4v1700000000000">
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.802696232975!2d-77.26968113145642!3d-11.565997555694508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910688dc2132e839%3A0x43ecd15d815c4a51!2sCa.%20Francisco%20Bolognesi%2C%20Chancay%2015131!5e0!3m2!1ses-419!2spe!4v1740985768478!5m2!1ses-419!2spe">
                     </iframe>
                 </div>
             </div>
@@ -99,6 +99,7 @@
 h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
+    font-size: 55px;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #ffe100, #d60000);
     -webkit-background-clip: text;
