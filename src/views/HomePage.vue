@@ -163,7 +163,7 @@ export default {
 }
 
 .plan-box p{
-    font-size: 30px;
+    font-size: 5vh;
 }
 .plan-box:hover {
     transform: scale(1.05);

@@ -58,6 +58,14 @@ export default {
   margin-bottom: 15px;
 }
 
+.container{
+  margin-top: 1.5rem;
+    padding: 0.2rem 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
 .coverage-list {
   list-style: none;
   padding: 0;
@@ -68,7 +76,7 @@ export default {
 
 .coverage-list li {
   font-size: 1.2rem;
-  margin: 10px 0;
+  margin: 8px 0;
   font-weight: bold;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
