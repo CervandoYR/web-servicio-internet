@@ -111,11 +111,12 @@ export default {
     async submitForm() {
       this.isSubmitting = true; // Iniciar animación
       try {
-      const response = await axios.post("https://backend-servicio-internet-production.up.railway.app/", FormData, {  // O la URL de Railway
+        const response = await axios.post("https://backend-servicio-internet-production.up.railway.app/api/contact/", {
   name: this.name,
   email: this.email,
   message: this.message,
 });
+
 
       console.log("Formulario enviado con éxito:", response.data);
 
