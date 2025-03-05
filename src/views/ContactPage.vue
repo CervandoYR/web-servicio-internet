@@ -18,6 +18,20 @@
           />
           <ErrorMessage name="name" class="text-danger small mt-1 d-block" />
         </div>
+
+        <div class="contact-background mb-4">
+          <label for="lastname" class="form-label text-primary fw-semibold">Apellido</label>
+          <Field
+            type="text"
+            class="form-control border-primary"
+            id="lastname"
+            name="lastname"
+            rules="required|onlyLetters"
+            v-model="lastname"
+          />
+          <ErrorMessage name="lastname" class="text-danger small mt-1 d-block" />
+        </div>
+
         <div class="mb-4">
           <label for="email" class="form-label text-primary fw-semibold">Correo Electrónico</label>
           <Field
@@ -30,6 +44,20 @@
           />
           <ErrorMessage name="email" class="text-danger small mt-1 d-block" />
         </div>
+
+        <div class="mb-4">
+          <label for="phone" class="form-label text-primary fw-semibold">Teléfono</label>
+          <Field
+            type="text"
+            class="form-control border-primary"
+            id="phone"
+            name="phone"
+            rules="required|phoneNumber"
+            v-model="phone"
+          />
+          <ErrorMessage name="phone" class="text-danger small mt-1 d-block" />
+        </div>
+
         <div class="mb-4">
           <label for="message" class="form-label text-primary fw-semibold">Mensaje</label>
           <Field
@@ -42,6 +70,7 @@
           />
           <ErrorMessage name="message" class="text-danger small mt-1 d-block" />
         </div>
+
         <div class="text-center">
           <button
             type="submit"
@@ -52,11 +81,11 @@
             @mouseover="hoverSubmit = true"
             @mouseleave="hoverSubmit = false"
           >
-          <span v-if="!isSubmitting">Enviar</span>
-             <span v-else class="animate__animated animate__fadeIn">
-                <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-                 Enviando...
-              </span>
+            <span v-if="!isSubmitting">Enviar</span>
+            <span v-else class="animate__animated animate__fadeIn">
+              <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+              Enviando...
+            </span>
           </button>
         </div>
       </Form>
@@ -66,30 +95,38 @@
 
 <script>
 import axios from "axios";
+import Swal from "sweetalert2";
 import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";
 import { required, email } from "@vee-validate/rules";
 
+// Definir reglas de validación
 defineRule("onlyLetters", (value) => {
   const onlyLettersRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-  return !value || onlyLettersRegex.test(value) || "El nombre no debe contener números";
+  return !value || onlyLettersRegex.test(value) || "Este campo no debe contener números ni caracteres especiales.";
 });
 
 defineRule("textWithNumbers", (value) => {
   const onlyNumbersRegex = /^[0-9]+$/;
-  return !value || !onlyNumbersRegex.test(value) || "El mensaje no puede ser solo números";
+  return !value || !onlyNumbersRegex.test(value) || "El mensaje no puede ser solo números.";
+});
+
+defineRule("phoneNumber", (value) => {
+  const phoneRegex = /^[0-9]{9}$/;
+  return !value || phoneRegex.test(value) || "El teléfono debe contener exactamente 9 dígitos numéricos.";
 });
 
 defineRule("required", required);
 defineRule("email", email);
 
 configure({
-  validateOnInput: true, // Valida en tiempo real
+  validateOnInput: true,
   generateMessage: (context) => {
     const messages = {
-      required: `Este campo es obligatorio.`,
+      required: "Este campo es obligatorio.",
       email: "Por favor, introduce un correo electrónico válido.",
-      onlyLetters: "El nombre no debe contener números.",
+      onlyLetters: "Este campo no debe contener números ni caracteres especiales.",
       textWithNumbers: "El mensaje no puede ser solo números.",
+      phoneNumber: "El teléfono debe contener exactamente 9 dígitos numéricos.",
     };
     return messages[context.rule.name] || `Error en el campo ${context.field}`;
   },
@@ -101,53 +138,73 @@ export default {
   data() {
     return {
       name: "",
+      lastname: "",
       email: "",
+      phone: "",
       message: "",
       hoverSubmit: false,
-      isSubmitting: false, // Controla la animación de "Enviando..."
+      isSubmitting: false,
     };
   },
   methods: {
     async submitForm() {
-      this.isSubmitting = true; // Iniciar animación
+      this.isSubmitting = true;
       try {
         const response = await axios.post("https://backend-servicio-internet-production.up.railway.app/api/contact/", {
-  name: this.name,
-  email: this.email,
-  message: this.message,
-});
+          name: this.name,
+          lastname: this.lastname,
+          email: this.email,
+          phone: this.phone,
+          message: this.message,
+        });
 
+        console.log("Formulario enviado con éxito:", response.data);
 
-      console.log("Formulario enviado con éxito:", response.data);
+        // Limpiar los campos
+        this.name = "";
+        this.lastname = "";
+        this.email = "";
+        this.phone = "";
+        this.message = "";
 
-      // Limpiar los campos
-      this.name = "";
-      this.email = "";
-      this.message = "";
+        this.$refs.contactForm.resetForm();
 
-      // Restablecer la validación
-      this.$refs.contactForm.resetForm();
+        // Mostrar animación con SweetAlert2
+        Swal.fire({
+          title: "¡Mensaje enviado!",
+          text: "Tu mensaje ha sido recibido, te responderemos pronto.",
+          icon: "success",
+          confirmButtonColor: "#007bff",
+          confirmButtonText: "Aceptar",
+          timer: 4000,
+          showClass: {
+            popup: "animate__animated animate__fadeInDown"
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp"
+          }
+        });
 
-      alert("Mensaje enviado correctamente");
-    } catch (error) {
-      console.error("Error al enviar el formulario:", error.response ? error.response.data : error.message);
-      alert("Error al enviar el formulario. Intente nuevamente.");
-    } finally {
-      this.isSubmitting = false; // Detener animación
-    }
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error.response ? error.response.data : error.message);
+        Swal.fire({
+          title: "Error",
+          text: "Hubo un problema al enviar el mensaje. Inténtalo nuevamente.",
+          icon: "error",
+          confirmButtonColor: "#d33",
+          confirmButtonText: "Cerrar",
+        });
+      } finally {
+        this.isSubmitting = false;
+      }
     },
   },
 };
 </script>
 
+
 <style scoped>
-/* Espaciado superior para que no esté tan junto a la sección anterior */
-.contact-section {
-  padding-top: 100px;
-  padding-bottom: 50px;
-}
-
-
+/* Estilos */
 .container {
   max-width: 700px;
   background: linear-gradient(135deg, #f8f9fa, #dee2e6);
@@ -158,11 +215,6 @@ export default {
   border-radius: 8px;
   padding: 10px;
   font-size: 1.1rem;
-}
-
-.textarea-custom {
-  height: 150px;
-  resize: none;
 }
 
 .fixed-textarea {
@@ -176,10 +228,6 @@ export default {
   padding: 10px 30px;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
-}
-
-.btn-primary:hover {
-  background-color: rgb(0, 0, 255) !important;
 }
 
 .submit-button:hover {
