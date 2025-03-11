@@ -85,7 +85,7 @@
         </div>
     </div>
 </div>
-<div id="contacto"><ContactPage /></div>
+<div id="contacto" class="mt-5"><ContactPage /></div>
 
 
     </div>
@@ -149,6 +149,11 @@ export default {
 
 <style scoped>
 
+#contacto {
+    margin-bottom: 50px; /* Ajusta según la separación deseada */
+}
+
+
 .animated { animation: fadeIn 1s ease-in-out; }
 .highlight { color: #ffcc00; }
 
@@ -202,6 +207,11 @@ export default {
     width: 90%; /* Ancho relativo */
     max-width: 800px; /* Ancho máximo */
     
+}
+@media (max-width: 1500px) {
+    .benefit-img {
+        height: 40vh; /* Reduce la altura en dispositivos móviles */
+    }
 }
 
 @media (max-width: 1200px) {

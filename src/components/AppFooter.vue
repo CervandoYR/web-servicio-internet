@@ -52,7 +52,7 @@ export default {
 <style scoped>
 .footer {
   background-color: #343a40; /* Fondo oscuro */
-  margin-top: 50px;
+  
 }
 
 .footer h5 {
