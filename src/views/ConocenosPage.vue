@@ -52,7 +52,7 @@
                 <!-- Lista de Servicios en Cartas -->
                 <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" data-aos="fade-up">
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn">
+                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
                             <div class="card-body text-center">
                                 <i class="fas fa-network-wired text-success fa-3x mb-3"></i>
                                 <h5 class="card-title fw-bold">Instalaciones de HFC y FTTH</h5>
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn">
+                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
                             <div class="card-body text-center">
                                 <i class="fas fa-box text-primary fa-3x mb-3"></i>
                                 <h5 class="card-title fw-bold">Colocación de cajas NAT</h5>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn">
+                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
                             <div class="card-body text-center">
                                 <i class="fas fa-lightbulb text-danger fa-3x mb-3"></i>
                                 <h5 class="card-title fw-bold">Empalmes de fibra óptica</h5>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn">
+                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
                             <div class="card-body text-center">
                                 <i class="fas fa-project-diagram text-warning fa-3x mb-3"></i>
                                 <h5 class="card-title fw-bold">Ampliaciones y mantenimiento de redes</h5>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn">
+                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
                             <div class="card-body text-center">
                                 <i class="fas fa-video text-info fa-3x mb-3"></i>
                                 <h5 class="card-title fw-bold">Sistemas de seguridad por cámaras</h5>
