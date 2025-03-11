@@ -68,74 +68,60 @@ export default {
     };
   },
   methods: {
-    toggleNavbar() {
-      this.showNavbar = !this.showNavbar;
-    },
-    closeNavbarAbout() {
-      this.showNavbar = false;
-      this.$router.push("/about").then(() => {
+  toggleNavbar() {
+    this.showNavbar = !this.showNavbar;
+  },
+  closeNavbar() {
+    this.showNavbar = false;
+  },
+  closeNavbarAndScrollToTop(route) {
+    this.closeNavbar(); // Aseguramos que esta función existe
+
+    if (this.$route.path !== route) {
+      this.$router.push(route).then(() => {
         setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          window.scrollTo({ top: 0, behavior: "instant" });
         });
       });
-    },
-    closeNavbarCobertura() {
-      this.showNavbar = false;
-      this.$router.push("/cobertura").then(() => {
-        setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      });
-    },
-    closeNavbarConocenos() {
-      this.showNavbar = false;
-      this.$router.push("/conocenos").then(() => {
-        setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      });
-    },
-    closeNavbar() {
-      this.showNavbar = false;
-    },
-    scrollToHome() {
-  this.closeNavbar();
-
-  // Detecta si viene desde /about o /cobertura
-  const fromInfoOrCobertura = this.$route.path === "/about" || this.$route.path === "/cobertura";
-
-  if (fromInfoOrCobertura) {
-    window.scrollTo({ top: 0, behavior: "instant" });
-  }
-
-  this.$router.push("/").then(() => {
-    setTimeout(() => {
-      if (!fromInfoOrCobertura) {
+    } else {
+      setTimeout(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    }, 100);
-  });
-    },
-    scrollToSection(sectionId) {
-      this.closeNavbar(); // Cierra el navbar después de hacer clic
-      if (this.$route.path !== "/") {
-        this.$router.push("/").then(() => {
-          setTimeout(() => {
-            this.scrollToElement(sectionId);
-          }, 300);
-        });
-      } else {
-        this.scrollToElement(sectionId);
-      }
-    },
-    scrollToElement(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        const yOffset = -80; 
-        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      }
+      });
     }
+  },
+  scrollToHome() {
+    this.closeNavbarAndScrollToTop("/");
+  },
+  closeNavbarConocenos() {
+    this.closeNavbarAndScrollToTop("/conocenos");
+  },
+  closeNavbarAbout() {
+    this.closeNavbarAndScrollToTop("/about");
+  },
+  closeNavbarCobertura() {
+    this.closeNavbarAndScrollToTop("/cobertura");
+  },
+  scrollToSection(sectionId) {
+    this.closeNavbar(); // Aseguramos que la navbar se cierre
+
+    if (this.$route.path !== "/") {
+      this.$router.push("/").then(() => {
+        setTimeout(() => {
+          this.scrollToElement(sectionId);
+        }, 300);
+      });
+    } else {
+      this.scrollToElement(sectionId);
+    }
+  },
+  scrollToElement(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      const yOffset = -80;
+      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
 
   },
 };

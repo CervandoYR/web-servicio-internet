@@ -114,7 +114,8 @@
 
                 <!-- Cierre y Contacto -->
                 <p class="lead animated fadeIn fw-bold mt-4" data-aos="fade-up">
-                    <i class="bi bi-telephone-fill text-danger me-2"></i> <a class="contacto" href="https://wa.link/09xsth" target="_blank"><strong>Contáctanos</strong></a> y descubre cómo
+                    <i class="bi bi-telephone-fill text-danger me-2"></i> <a class="contacto"
+                        href="https://wa.link/09xsth" target="_blank"><strong>Contáctanos</strong></a> y descubre cómo
                     podemos ayudarte.
                 </p>
 
@@ -133,7 +134,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="info-box animated fadeIn">
+                <div class="info-box animated fadeIn" data-aos="flip-up">
                     <i class="fas fa-eye icon"></i>
                     <h3>Visión</h3>
                     <p>Ser la empresa líder en telecomunicaciones en la región, ofreciendo tecnología de vanguardia y un
@@ -141,7 +142,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="info-box animated fadeInRight">
+                <div class="info-box animated fadeInRight" data-aos="flip-up">
                     <i class="fas fa-handshake icon"></i>
                     <h3>Valores</h3>
                     <p>Compromiso, innovación y excelencia son nuestros pilares para construir relaciones de confianza
@@ -162,9 +163,11 @@
                         <div v-for="(chunk, index) in chunkedClients" :key="index" class="carousel-item"
                             :class="{ active: index === 0 }" data-bs-interval="3000">
                             <div class="row justify-content-center">
-                                <div v-for="client in chunk" :key="client.id" class="col-lg-2 col-md-3 col-4">
+                                <div v-for="client in chunk" :key="client.id"
+                                    class="col-lg-3 col-md-4 col-6 text-center">
                                     <img :src="client.logo" :alt="client.name" class="img-fluid client-logo">
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -207,7 +210,11 @@ export default {
         };
     },
     mounted() {
-        AOS.init({ duration: 1000 });
+        AOS.init({
+            duration: 1000, // Duración de la animación en ms
+            once: false, // Permite que la animación se active en ambos sentidos (subida y bajada)
+            mirror: true // Hace que la animación también se reproduzca al volver a ver el elemento en el viewport
+        })
     },
     computed: {
         // Divide los clientes en grupos de 4 para el carrusel
@@ -228,13 +235,17 @@ export default {
 
 <style scoped>
 .contacto {
-    text-decoration: none; /* Quita el subrayado */
-    color: red; /* Cambia el color del texto a rojo */
-    font-weight: bold; /* Opcional: Hace el texto más grueso */
+    text-decoration: none;
+    /* Quita el subrayado */
+    color: red;
+    /* Cambia el color del texto a rojo */
+    font-weight: bold;
+    /* Opcional: Hace el texto más grueso */
 }
 
 .contacto:hover {
-    color: darkred; /* Opcional: Cambia el color cuando pasas el cursor */
+    color: darkred;
+    /* Opcional: Cambia el color cuando pasas el cursor */
 }
 
 
@@ -333,16 +344,14 @@ export default {
 
 /* Estilos para los logos de los clientes */
 .client-logo {
-    max-height: 100px;
-    margin: 10px auto;
-    /* Centrar los logos */
-    transition: transform 0.3s ease;
+    object-fit: contain; /* Mantiene la proporción del logo */
+    transition: transform 0.3s ease-in-out; /* Agrega un efecto de zoom */
 }
 
 .client-logo:hover {
-    transform: scale(1.1);
-    /* Efecto de escala al hacer hover */
+    transform: scale(1.2); /* Efecto de agrandamiento al pasar el mouse */
 }
+
 
 /* Ajustes responsivos para el carrusel de clientes */
 @media (max-width: 768px) {

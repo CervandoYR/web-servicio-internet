@@ -138,7 +138,11 @@ export default {
         };
     },
     mounted() {
-        AOS.init({ duration: 1000 });
+        AOS.init({
+            duration: 1000, // Duración de la animación en ms
+            once: false, // Permite que la animación se active en ambos sentidos (subida y bajada)
+            mirror: true // Hace que la animación también se reproduzca al volver a ver el elemento en el viewport
+        })
     },
     methods: {
         scrollToPlans() {
@@ -522,7 +526,7 @@ export default {
     }
 
     .moving-text {
-        font-size: 3.6vw;
+        font-size: 2.5vw;
         /* Aumenta el tamaño de fuente en dispositivos móviles */
     }
 
