@@ -12,22 +12,28 @@
           <p>
             <i class="bi bi-telephone me-2"></i>+51 924 076 526
           </p>
+          <p>
+            <i class="bi bi-file-earmark-text me-2"></i>RUC: 20603694067 - SERVITEK TECHNOLOGIES S.R.L
+          </p>
         </div>
 
         <!-- Redes Sociales -->
         <div class="col-md-4 mb-3 text-center">
           <h5 class="text-uppercase">Síguenos</h5>
           <div class="d-flex justify-content-center">
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1">
+            <a href="https://www.facebook.com/servitektechnologies"
+              class="btn btn-outline-light btn-sm rounded-circle mx-1" target="_blank">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1">
-              <i class="bi bi-twitter"></i>
+            <a href="https://www.tiktok.com/@javiercomedias" class="btn btn-outline-light btn-sm rounded-circle mx-1"
+              target="_blank">
+              <i class="bi bi-tiktok"></i>
             </a>
             <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1">
               <i class="bi bi-instagram"></i>
             </a>
-            <a href="#" class="btn btn-outline-light btn-sm rounded-circle mx-1">
+            <a href="https://www.linkedin.com/in/william-javier-yactayo-cervantes-b8115198/"
+              class="btn btn-outline-light btn-sm rounded-circle mx-1" target="_blank">
               <i class="bi bi-linkedin"></i>
             </a>
           </div>
@@ -51,8 +57,9 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #343a40; /* Fondo oscuro */
-  
+  background-color: #343a40;
+  /* Fondo oscuro */
+
 }
 
 .footer h5 {
@@ -73,7 +80,8 @@ export default {
 }
 
 .footer .btn-outline-light:hover {
-  background-color: #0dcaf0; /* Azul claro */
+  background-color: #0dcaf0;
+  /* Azul claro */
   color: #fff;
   border-color: #0dcaf0;
 }

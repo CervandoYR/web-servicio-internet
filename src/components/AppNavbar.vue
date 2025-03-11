@@ -33,6 +33,12 @@
               </router-link>
 
               <li class="nav-item">
+                <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos()">
+                  <i class="fas fa-users me-1"></i>Conócenos
+                </router-link>
+              </li>
+
+              <li class="nav-item">
                 <router-link to="/about" class="nav-link" @click="closeNavbarAbout()">
                   <i class="fas fa-info-circle me-1"></i>Info
                 </router-link>
@@ -76,6 +82,14 @@ export default {
     closeNavbarCobertura() {
       this.showNavbar = false;
       this.$router.push("/cobertura").then(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+    },
+    closeNavbarConocenos() {
+      this.showNavbar = false;
+      this.$router.push("/conocenos").then(() => {
         setTimeout(() => {
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
@@ -139,7 +153,7 @@ export default {
 }
 
 .content {
-  margin-top: 70px;
+  margin-top: 40px;
   transition: margin-top 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
@@ -176,4 +190,36 @@ export default {
 .shadow-sm {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Animación de deslizamiento para el menú desplegable */
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px; /* Ajusta el valor según la altura de tu menú */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    max-height: 500px; /* Ajusta el valor según la altura de tu menú */
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.navbar-collapse.show {
+  animation: slideDown 0.5s ;
+}
+
+.navbar-collapse:not(.show) {
+  animation: slideUp 0.5s ;
+}
+
 </style>

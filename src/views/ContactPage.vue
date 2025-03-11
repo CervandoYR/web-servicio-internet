@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center min-vh-100">
+  <div class="d-flex justify-content-center align-items-center min-vh-100" data-aos="fade-up">
     <div class="contact-page container p-5 shadow rounded-3 bg-light">
       <h1 class="text-center mb-4 text-primary fw-bold">Contáctanos</h1>
       <p class="text-center text-muted mb-5">
@@ -98,6 +98,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { Form, Field, ErrorMessage, defineRule, configure } from "vee-validate";
 import { required, email } from "@vee-validate/rules";
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // Definir reglas de validación
 defineRule("onlyLetters", (value) => {
@@ -146,6 +148,9 @@ export default {
       isSubmitting: false,
     };
   },
+  mounted() {
+        AOS.init({ duration: 1000 });
+    },
   methods: {
     async submitForm() {
       this.isSubmitting = true;

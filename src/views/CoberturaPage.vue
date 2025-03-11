@@ -66,6 +66,7 @@ export default {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-top: 6vh;
 }
 
 .title {
@@ -81,6 +82,26 @@ export default {
     letter-spacing: 1px;
     margin-bottom: 20px;
 }
+
+/* Animaciones */
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-in {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 
 .content-grid {
   display: grid;
