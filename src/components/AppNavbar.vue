@@ -8,9 +8,9 @@
             <i class="fas fa-network-wired me-2"></i>NetSystems
           </router-link>
 
-          <!-- Botón de colapso -->
-          <button class="navbar-toggler" type="button" @click="toggleNavbar">
-            <span class="navbar-toggler-icon"></span>
+          <!-- Botón de colapso mejorado -->
+          <button class="navbar-toggler custom-toggler" type="button" @click="toggleNavbar">
+            <i :class="showNavbar ? 'fas fa-xmark' : 'fas fa-bars'"></i>
           </button>
 
           <!-- Enlaces del navbar -->
@@ -49,7 +49,6 @@
                   <i class="fas fa-wifi me-1"></i>Cobertura
                 </router-link>
               </li>
-
             </ul>
           </div>
         </div>
@@ -57,7 +56,6 @@
     </div>
   </main>
 </template>
-
 
 <script>
 export default {
@@ -68,65 +66,61 @@ export default {
     };
   },
   methods: {
-  toggleNavbar() {
-    this.showNavbar = !this.showNavbar;
-  },
-  closeNavbar() {
-    this.showNavbar = false;
-  },
-  closeNavbarAndScrollToTop(route) {
-    this.closeNavbar(); // Aseguramos que esta función existe
-
-    if (this.$route.path !== route) {
-      this.$router.push(route).then(() => {
-        setTimeout(() => {
-          window.scrollTo({ top: 0, behavior: "instant" });
+    toggleNavbar() {
+      this.showNavbar = !this.showNavbar;
+    },
+    closeNavbar() {
+      this.showNavbar = false;
+    },
+    closeNavbarAndScrollToTop(route) {
+      this.closeNavbar();
+      if (this.$route.path !== route) {
+        this.$router.push(route).then(() => {
+          setTimeout(() => {
+            window.scrollTo({ top: 0, behavior: "instant" });
+          });
         });
-      });
-    } else {
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-  },
-  scrollToHome() {
-    this.closeNavbarAndScrollToTop("/");
-  },
-  closeNavbarConocenos() {
-    this.closeNavbarAndScrollToTop("/conocenos");
-  },
-  closeNavbarAbout() {
-    this.closeNavbarAndScrollToTop("/about");
-  },
-  closeNavbarCobertura() {
-    this.closeNavbarAndScrollToTop("/cobertura");
-  },
-  scrollToSection(sectionId) {
-    this.closeNavbar(); // Aseguramos que la navbar se cierre
-
-    if (this.$route.path !== "/") {
-      this.$router.push("/").then(() => {
+      } else {
         setTimeout(() => {
-          this.scrollToElement(sectionId);
-        }, 300);
-      });
-    } else {
-      this.scrollToElement(sectionId);
-    }
-  },
-  scrollToElement(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      const yOffset = -80;
-      const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
-  }
-
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+    },
+    scrollToHome() {
+      this.closeNavbarAndScrollToTop("/");
+    },
+    closeNavbarConocenos() {
+      this.closeNavbarAndScrollToTop("/conocenos");
+    },
+    closeNavbarAbout() {
+      this.closeNavbarAndScrollToTop("/about");
+    },
+    closeNavbarCobertura() {
+      this.closeNavbarAndScrollToTop("/cobertura");
+    },
+    scrollToSection(sectionId) {
+      this.closeNavbar();
+      if (this.$route.path !== "/") {
+        this.$router.push("/").then(() => {
+          setTimeout(() => {
+            this.scrollToElement(sectionId);
+          }, 300);
+        });
+      } else {
+        this.scrollToElement(sectionId);
+      }
+    },
+    scrollToElement(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        const yOffset = -80;
+        const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+    },
   },
 };
 </script>
-
 
 <style scoped>
 .navbar {
@@ -135,7 +129,30 @@ export default {
 }
 
 .navbar-toggler {
+  background-color: #fff;
   border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.navbar-toggler:hover {
+  background-color: #ff8f7b;
+  transform: scale(1.1);
+}
+
+.navbar-toggler i {
+  font-size: 24px;
+  color: #F1634C;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-toggler i.fa-xmark {
+  transform: rotate(180deg);
 }
 
 .content {
@@ -145,17 +162,10 @@ export default {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
 }
 
-
-.navbar-collapse.show+.content {
+.navbar-collapse.show + .content {
   margin-top: auto;
-}
-
-
-.navbar-toggler-icon {
-  filter: brightness(0.8);
 }
 
 .nav-link {
@@ -173,25 +183,21 @@ export default {
   text-decoration: underline;
 }
 
-.shadow-sm {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Animación de deslizamiento para el menú desplegable */
+/* Animaciones de apertura/cierre del menú */
 @keyframes slideDown {
   from {
     max-height: 0;
     opacity: 0;
   }
   to {
-    max-height: 500px; /* Ajusta el valor según la altura de tu menú */
+    max-height: 500px;
     opacity: 1;
   }
 }
 
 @keyframes slideUp {
   from {
-    max-height: 500px; /* Ajusta el valor según la altura de tu menú */
+    max-height: 500px;
     opacity: 1;
   }
   to {
@@ -201,11 +207,10 @@ export default {
 }
 
 .navbar-collapse.show {
-  animation: slideDown 0.5s ;
+  animation: slideDown 0.7s;
 }
 
 .navbar-collapse:not(.show) {
-  animation: slideUp 0.5s ;
+  animation: slideUp 0.7s;
 }
-
 </style>
