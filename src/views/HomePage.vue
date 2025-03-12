@@ -111,8 +111,8 @@ export default {
             ],
             plans: [
                 { id: 1, name: "Plan Básico", speed: 200, price: "S/ 50", image: require("../assets/routerwifi.jpg"), link: "https://wa.link/ce4m72" },
-                { id: 2, name: "Plan Avanzado", speed: 400, price: "S/ 79", image: require("../assets/premium.jpg"), link: "https://wa.link/50xpu4" },
-                { id: 3, name: "Plan Premium", speed: 600, price: "S/ 89", image: require("../assets/gamer.webp"), link: "https://wa.link/zzahue" }
+                { id: 2, name: "Plan Avanzado", speed: 400, price: "S/ 60", image: require("../assets/premium.jpg"), link: "https://wa.link/50xpu4" },
+                { id: 3, name: "Plan Premium", speed: 600, price: "S/ 90", image: require("../assets/gamer.webp"), link: "https://wa.link/zzahue" }
             ],
             info: [
                 {
