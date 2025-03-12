@@ -37,6 +37,7 @@
                   <i class="fas fa-users me-1"></i>Conócenos
                 </router-link>
               </li>
+              
 
               <li class="nav-item">
                 <router-link to="/about" class="nav-link" @click="closeNavbarAbout()">
