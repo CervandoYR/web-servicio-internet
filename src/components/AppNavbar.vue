@@ -9,13 +9,12 @@
           </router-link>
 
           <!-- Botón de colapso mejorado -->
-          <button class="navbar-toggler custom-toggler" type="button" @click="toggleNavbar">
+          <button class="navbar-toggler" type="button" @click="toggleNavbar">
             <i :class="showNavbar ? 'fas fa-xmark' : 'fas fa-bars'"></i>
           </button>
 
           <!-- Enlaces del navbar -->
-          <div class="collapse navbar-collapse" :class="{ 'show': showNavbar, 'd-lg-flex': true }">
-
+          <div class="collapse navbar-collapse" :class="{ 'show': showNavbar }">
             <ul class="navbar-nav ms-auto">
               <router-link to="/" class="nav-link" @click="scrollToHome">
                 <i class="fas fa-house me-1"></i>Inicio
@@ -132,13 +131,7 @@ export default {
 
 .navbar-toggler {
   background-color: #fff;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   transition: transform 0.3s ease-in-out, background-color 0.3s;
 }
 
