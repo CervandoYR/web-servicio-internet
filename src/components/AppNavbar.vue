@@ -34,14 +34,14 @@
 
               <li class="nav-item">
                 <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos()">
-                  <i class="fas fa-users me-1"></i>Conócenos
+                  <i class="fas fa-user-group me-1"></i>Conócenos
                 </router-link>
               </li>
               
 
               <li class="nav-item">
                 <router-link to="/about" class="nav-link" @click="closeNavbarAbout()">
-                  <i class="fas fa-info-circle me-1"></i>Info
+                  <i class="fas fa-headset me-1"></i> Soporte
                 </router-link>
               </li>
 
