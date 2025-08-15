@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory  } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import App from './App.vue'
 
 import 'bootstrap/dist/css/bootstrap.css'
@@ -11,31 +11,35 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-
-AOS.init();
+AOS.init()
 
 // Importar vistas
 import HomePage from './views/HomePage.vue'
 import AboutPage from './views/AboutPage.vue'
 import ContactPage from './views/ContactPage.vue'
-import CoberturaPage from './views/CoberturaPage.vue';
-import ConocenosPage from './views/ConocenosPage.vue';
+import CoberturaPage from './views/CoberturaPage.vue'
+import ConocenosPage from './views/ConocenosPage.vue'
 
 // Configurar rutas
 const routes = [
-    { path: '/', component: HomePage },
-    { path: '/about', component: AboutPage },
-    { path: '/contact', component: ContactPage },
-    { path: '/cobertura', component: CoberturaPage },
-    { path: '/conocenos', component: ConocenosPage },
-    { path: '/:pathMatch(.*)*', redirect: '/' },
+  { path: '/', component: HomePage },
+  { path: '/about', component: AboutPage },
+  { path: '/contact', component: ContactPage },
+  { path: '/cobertura', component: CoberturaPage },
+  { path: '/conocenos', component: ConocenosPage },
+  { path: '/:pathMatch(.*)*', redirect: '/' }
 ]
+
 const router = createRouter({
-    history: createWebHashHistory('/web-servicio-internet/'), // Define el prefijo de las rutas
-    routes
+  history: createWebHashHistory('/web-servicio-internet/'),
+  routes
 })
 
-// Crear aplicación
 const app = createApp(App)
 app.use(router)
-app.mount('#app')
+
+// 🚀 Disparamos evento para prerender cuando router esté listo
+router.isReady().then(() => {
+  app.mount('#app')
+  document.dispatchEvent(new Event('render-event'))
+})

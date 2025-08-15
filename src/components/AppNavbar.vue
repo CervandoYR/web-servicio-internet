@@ -28,9 +28,9 @@
                 <i class="fas fa-star me-1"></i>Beneficios
               </router-link>
 
-              <router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
+              <!--<router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
                 <i class="fas fa-envelope me-1"></i>Contacto
-              </router-link>
+              </router-link>-->
 
               <li class="nav-item">
                 <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos()">

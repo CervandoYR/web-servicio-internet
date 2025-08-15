@@ -111,11 +111,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- Contacto -->
+        
+        <!-- Contacto 
         <section class="contact-section container py-5" id="contacto">
             <ContactPage />
-        </section>
+        </section>-->
 
         <!-- Texto SEO Mejorado -->
         <section class="seo-text container py-4" data-aos="fade-up">
@@ -139,19 +139,19 @@
                 estabilidad y conectividad para todos tus dispositivos. ¡Contáctanos hoy y mejora tu experiencia de
                 internet!
             </p>
-            <a href="#contacto" class="btn btn-seo-cta">Contacta Ahora</a>
+            <a href="#plans" class="btn btn-seo-cta">Contacta Ahora</a>
         </section>
     </div>
 </template>
 
 <script>
-import ContactPage from '../views/ContactPage.vue';
+//import ContactPage from '../views/ContactPage.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default {
     name: 'HomePage',
-    components: { ContactPage },
+    //components: { ContactPage },
     data() {
         return {
             benefits: [
