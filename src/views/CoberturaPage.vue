@@ -32,20 +32,21 @@
 
 <script>
 export default {
+  name: 'CoveragePage',
   data() {
     return {
       loading: true,
       coverageAreas: [
-        { name: "CALLE BOLOGNESI" },
-        { name: "PROLONGACIÓN TACNA" },
-        { name: "CALLE BELEN" },
-        { name: "CALLE MIGUEL GRAU" },
-        { name: "AV 28 DE JULIO" },
-        { name: "TNT PRINGLES" },
-        { name: "ASOVISEM" },
-        { name: "LA PORTADA" },
-        { name: "LA RIVERA" },
-        { name: "BOULEVARD CHANCAY" }
+        { name: "Calle Bolognesi", link: "https://www.google.com/maps/search/?api=1&query=Calle+Bolognesi,+Chancay,+Peru" },
+        { name: "Prolongación Tacna", link: "https://www.google.com/maps/search/?api=1&query=Prolongación+Tacna,+Chancay,+Peru" },
+        { name: "Calle Belén", link: "https://www.google.com/maps/search/?api=1&query=Calle+Belén,+Chancay,+Peru" },
+        { name: "Calle Miguel Grau", link: "https://www.google.com/maps/search/?api=1&query=Calle+Miguel+Grau,+Chancay,+Peru" },
+        { name: "Av. 28 de Julio", link: "https://www.google.com/maps/search/?api=1&query=Avenida+28+de+Julio,+Chancay,+Peru" },
+        { name: "Tnt. Pringles", link: "https://www.google.com/maps/search/?api=1&query=Tnt+Pringles,+Chancay,+Peru" },
+        { name: "Asovisem", link: "https://www.google.com/maps/search/?api=1&query=Asovisem,+Chancay,+Peru" },
+        { name: "La Portada", link: "https://www.google.com/maps/search/?api=1&query=La+Portada,+Chancay,+Peru" },
+        { name: "La Rivera", link: "https://www.google.com/maps/search/?api=1&query=La+Rivera,+Chancay,+Peru" },
+        { name: "Boulevard Chancay", link: "https://www.google.com/maps/search/?api=1&query=Boulevard+Chancay,+Chancay,+Peru" }
       ]
     };
   },
@@ -58,99 +59,117 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 .coverage-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f1f3f5 100%);
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
-  margin-top: 6vh;
+  margin-top: 8vh;
 }
 
 .title {
   font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 55px;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #ffe100, #d60000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 2.8rem;
+  background: linear-gradient(to right, #ffe100, #d60000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  margin-bottom: 2rem;
 }
 
 /* Animaciones */
 .animate-fade-in {
-    animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .animate-slide-in {
-    animation: slideIn 1s ease-in-out;
+  animation: slideIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideIn {
-    from { transform: translateY(30px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
-
 
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: center;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  align-items: start;
 }
 
 .coverage-list-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.coverage-list-container:hover {
+  transform: translateY(-5px);
 }
 
 .coverage-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .coverage-list li {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
-  margin: 8px 0;
-  font-weight: bold;
+  font-weight: 500;
+  margin: 0.75rem 0;
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .coverage-list li:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background: #f1f3f5;
+  transform: translateX(5px);
 }
 
 .coverage-list i {
   color: #f1634c;
+  font-size: 1.3rem;
+}
+
+.coverage-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.coverage-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
 }
 
 .map-container {
   position: relative;
-  height: 400px;
-  border-radius: 10px;
+  height: 450px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .loader-container {
@@ -162,15 +181,15 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 2;
 }
 
 .loader {
-  width: 40px;
-  height: 40px;
-  border: 5px solid #f3f3f3;
-  border-top: 5px solid #f1634c;
+  width: 48px;
+  height: 48px;
+  border: 6px solid #e9ecef;
+  border-top: 6px solid #f1634c;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -186,9 +205,30 @@ export default {
   100% { transform: rotate(360deg); }
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 992px) {
   .content-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .map-container {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .coverage-container {
+    padding: 1.5rem 1rem;
+    margin-top: 4vh;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .coverage-list li {
+    font-size: 1rem;
+  }
+  .map-container {
+    height: 300px;
   }
 }
 </style>
