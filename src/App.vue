@@ -6,13 +6,11 @@
     </div>
     <AppFooter />
   </div>
-  <AppQuestions/>
 </template>
 
 <script>
 import AppNavbar from './components/AppNavbar.vue'
 import AppFooter from './components/AppFooter.vue'
-import AppQuestions from './components/AppQuestions.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -24,26 +22,29 @@ export default {
   components: {
     AppNavbar,
     AppFooter,
-    AppQuestions,
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
 html, body, #app {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Poppins', sans-serif; /* Fuente global */
 }
 
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* 100% del alto de la pantalla */
+  min-height: 100vh;
 }
 
 .content {
-  flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+  flex: 1;
 }
 </style>
