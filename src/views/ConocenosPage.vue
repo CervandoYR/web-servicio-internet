@@ -1,195 +1,284 @@
 <template>
-    <div id="conocenos" class="conocenos-page container mt-5">
-        <!-- Sección de presentación con animación -->
-        <div class="row text-center mb-5">
-            <div class="col-md-12">
-                <h1 class="display-3 animated fadeInDown welcome-title">
-                    Descubre Más Sobre Nosotros
-                </h1>
-                <div class="decorative-banner">
-                    <p class="lead moving-text">Innovación y calidad en cada servicio.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Carrusel de imágenes de la empresa -->
-        <div id="companyCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div v-for="(image, index) in companyImages" :key="image.id" class="carousel-item"
-                    :class="{ active: index === 0 }" data-bs-interval="3000">
-                    <img :src="image.src" class="d-block w-100 carousel-img" :alt="image.alt">
-                    <div class="carousel-caption d-block">
-                        <h3>{{ image.title }}</h3>
-                        <p>{{ image.description }}</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#companyCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#companyCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-        </div>
-
-        <!-- Sección de información de la empresa -->
-        <div class="row mt-5 text-center">
-            <div class="col-md-12">
-                <!-- Título -->
-                <h2 class="display-4 animated fadeIn fw-bold text-uppercase text-secundary" data-aos="fade-up">
-                    Sobre NETSYSTEMS en Perú
-                </h2>
-                <hr class="w-50 animated fadeIn mx-auto border-primary mb-4" data-aos="fade-up">
-
-                <!-- Introducción -->
-                <p class="lead animated fadeIn" data-aos="fade-up">
-                    Somos una empresa especializada en <strong>Redes, Telecomunicaciones e Informática</strong>, con un
-                    equipo de profesionales altamente capacitados en:
-                </p>
-
-                <!-- Lista de Servicios en Cartas -->
-                <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" data-aos="fade-up">
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
-                            <div class="card-body text-center">
-                                <i class="fas fa-network-wired text-success fa-3x mb-3"></i>
-                                <h5 class="card-title fw-bold">Instalaciones de HFC y FTTH</h5>
-                                <p class="card-text">Brindamos instalación de redes de telecomunicaciones de alta
-                                    velocidad.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
-                            <div class="card-body text-center">
-                                <i class="fas fa-box text-primary fa-3x mb-3"></i>
-                                <h5 class="card-title fw-bold">Colocación de cajas NAT</h5>
-                                <p class="card-text">Instalamos cajas de distribución para optimizar el tendido de red.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
-                            <div class="card-body text-center">
-                                <i class="fas fa-lightbulb text-danger fa-3x mb-3"></i>
-                                <h5 class="card-title fw-bold">Empalmes de fibra óptica</h5>
-                                <p class="card-text">Realizamos empalmes precisos para garantizar la continuidad de la
-                                    señal.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
-                            <div class="card-body text-center">
-                                <i class="fas fa-project-diagram text-warning fa-3x mb-3"></i>
-                                <h5 class="card-title fw-bold">Ampliaciones y mantenimiento de redes</h5>
-                                <p class="card-text">Optimizamos redes existentes para mejorar su rendimiento y
-                                    cobertura.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
-                            <div class="card-body text-center">
-                                <i class="fas fa-video text-info fa-3x mb-3"></i>
-                                <h5 class="card-title fw-bold">Sistemas de seguridad por cámaras</h5>
-                                <p class="card-text">Instalamos sistemas de vigilancia para protección en tiempo real.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compromiso -->
-                <p class="lead animated fadeIn mt-5" data-aos="fade-up">
-                    En NetSystems nuestro compromiso es brindar <strong>soluciones tecnológicas confiables y de alta calidad en todo Chancay - Perú</strong>,
-                    garantizando la seguridad y eficiencia en cada proyecto.
-                    Trabajamos con <strong>cableado estructurado</strong> (UTP, coaxial y fibra óptica), adaptándonos a
-                    las necesidades específicas de nuestros clientes del país con
-                    <strong>enlaces aéreos o cableados</strong>.
-                </p>
-
-                <!-- Cierre y Contacto -->
-                <p class="lead animated fadeIn fw-bold mt-4" data-aos="fade-up">
-                    <i class="bi bi-telephone-fill text-danger me-2"></i> <a class="contacto"
-                        href="https://wa.link/09xsth" target="_blank"><strong>Contáctanos</strong></a> y descubre cómo
-                    podemos ayudarte.
-                </p>
-
-            </div>
-        </div>
-
-
-        <!-- Nueva estructura de la sección de información -->
-        <div class="row mt-5 text-center company-info" data-aos="flip-up">
-            <div class="col-md-3">
-                <div class="info-box animated fadeInLeft">
-                    <i class="fas fa-broadcast-tower icon"></i>
-                    <h3>Misión</h3>
-                    <p>Conectar a personas y empresas Peruanas con soluciones innovadoras en redes y telecomunicaciones,
-                        garantizando calidad y seguridad en cada servicio.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="info-box animated fadeIn" data-aos="flip-up">
-                    <i class="fas fa-eye icon"></i>
-                    <h3>Visión</h3>
-                    <p>Ser NetSystems el líder en telecomunicaciones en la región, ofreciendo tecnología de vanguardia y un
-                        servicio excepcional a nuestros clientes.</p>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="info-box animated fadeInRight" data-aos="flip-up">
-                    <i class="fas fa-handshake icon"></i>
-                    <h3>Valores</h3>
-                    <p>Compromiso, innovación y excelencia son nuestros pilares para construir relaciones de confianza
-                        con nuestros clientes.</p>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Sección de clientes destacados con slider -->
-        <div class="row mt-5 text-center">
-            <div class="col-md-12">
-                <h2 class="display-4 animated fadeIn fw-bold clientes-tittle" data-aos="fade-up">
-                    Algunos de nuestros clientes
-                </h2>
-                <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
-                    <div class="carousel-inner">
-                        <div v-for="(chunk, index) in chunkedClients" :key="index" class="carousel-item"
-                            :class="{ active: index === 0 }" data-bs-interval="3000">
-                            <div class="row justify-content-center">
-                                <div v-for="client in chunk" :key="client.id"
-                                    class="col-lg-3 col-md-4 col-6 text-center">
-                                    <img :src="client.logo" :alt="client.name" class="img-fluid client-logo">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Anterior</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Siguiente</span>
-                    </button>
-                </div>
+<div id="conocenos" class="conocenos-page container mt-5">
+    <!-- Sección de presentación con animación -->
+    <div class="row text-center mb-5">
+        <div class="col-md-12">
+            <h1 class="display-3 animated fadeInDown welcome-title">
+                Descubre Más Sobre Nosotros
+            </h1>
+            <div class="decorative-banner">
+                <p class="lead moving-text">Innovación y calidad en cada servicio.</p>
             </div>
         </div>
     </div>
+
+    <!-- Carrusel de imágenes de la empresa -->
+    <div id="companyCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div v-for="(image, index) in companyImages" :key="image.id" class="carousel-item"
+                :class="{ active: index === 0 }" data-bs-interval="3000">
+                <img :src="image.src" class="d-block w-100 carousel-img" :alt="image.alt">
+                <div class="carousel-caption d-block">
+                    <h3>{{ image.title }}</h3>
+                    <p>{{ image.description }}</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#companyCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#companyCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+
+    <!-- Sección de información de la empresa -->
+    <div class="row mt-5 text-center">
+        <div class="col-md-12">
+            <!-- Título -->
+            <h2 class="display-4 animated fadeIn fw-bold text-uppercase text-secundary" data-aos="fade-up">
+                Sobre NETSYSTEMS en Perú
+            </h2>
+            <hr class="w-50 animated fadeIn mx-auto border-primary mb-4" data-aos="fade-up">
+
+            <!-- Introducción -->
+            <p class="lead animated fadeIn" data-aos="fade-up">
+                Somos una empresa especializada en <strong>Redes, Telecomunicaciones e Informática</strong>, con un
+                equipo de profesionales altamente capacitados en:
+            </p>
+
+
+            <!-- Nueva Subsección con Imágenes -->
+            <section class="container-fluid py-4 py-md-5 services-section">
+                <div class="container">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6" data-aos="fade-right">
+                            <div class="about-img position-relative overflow-hidden rounded-4">
+                                <img class="w-100 h-100 img-fluid" src="../assets/img/tecnologia.png"
+                                    alt="Soluciones Tecnológicas de NetSystems en Perú" title="NetSystems Servicios"
+                                    loading="lazy" style="object-fit: cover; min-height: 400px;"
+                                    @error="handleImageError($event, 'services-main')">
+                            </div>
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left">
+                            <div class="about-text bg-white p-4 p-lg-5 rounded-4 shadow-sm">
+                                <h6 class="text-primary text-uppercase mb-3 fs-6" style="letter-spacing: 3px;">
+                                    Nuestras Soluciones
+                                </h6>
+                                <h2 class="h2 fs-3 fw-bold mb-4 text-wrap-balance">
+                                    Tecnología Avanzada para tu Hogar y/o Negocio
+                                </h2>
+                                <p class="fs-6 text-muted mb-4">Explora nuestras soluciones especializadas:</p>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-6">
+                                        <img class="img-fluid rounded-3" src="../assets/img/datacenter.jpeg"
+                                            alt="Redes e Infraestructura en Perú" title="Redes NetSystems"
+                                            loading="lazy" @error="handleImageError($event, 'services-1')">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="img-fluid rounded-3" src="../assets/img/seguridadelectronica.jpeg"
+                                            alt="Data Center y Seguridad Electrónica en Perú" title="Data Center NetSystems"
+                                            loading="lazy" @error="handleImageError($event, 'services-2')">
+                                    </div>
+                                </div>
+                                <div class="button-group d-flex gap-3 flex-wrap">
+                                    <router-link to="/about" class="btn btn-primary py-2 px-4">Contáctanos</router-link>
+                                    <a href="https://w.app/gsaeeq" class="btn btn-outline-primary py-2 px-4"
+                                        target="_blank">Realice su cotización</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista de Servicios en Cartas -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 justify-content-center" data-aos="fade-up">
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-network-wired text-success fa-3x mb-3" aria-label="Icono de Instalaciones de HFC y FTTH"></i>
+                            <h5 class="card-title fw-bold">Instalaciones de HFC y FTTH</h5>
+                            <p class="card-text">Brindamos instalación de redes de telecomunicaciones de alta
+                                velocidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-box text-primary fa-3x mb-3" aria-label="Icono de Colocación de cajas NAT"></i>
+                            <h5 class="card-title fw-bold">Colocación de cajas NAT</h5>
+                            <p class="card-text">Instalamos cajas de distribución para optimizar el tendido de red.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-lightbulb text-danger fa-3x mb-3" aria-label="Icono de Empalmes de fibra óptica"></i>
+                            <h5 class="card-title fw-bold">Empalmes de fibra óptica</h5>
+                            <p class="card-text">Realizamos empalmes precisos para garantizar la continuidad de la
+                                señal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-project-diagram text-warning fa-3x mb-3" aria-label="Icono de Ampliaciones y mantenimiento de redes"></i>
+                            <h5 class="card-title fw-bold">Ampliaciones y mantenimiento de redes</h5>
+                            <p class="card-text">Optimizamos redes existentes para mejorar su rendimiento y
+                                cobertura.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-video text-info fa-3x mb-3" aria-label="Icono de Sistemas de seguridad por cámaras"></i>
+                            <h5 class="card-title fw-bold">Sistemas de seguridad por cámaras</h5>
+                            <p class="card-text">Instalamos sistemas de vigilancia para protección en tiempo real.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop text-success fa-3x mb-3" aria-label="Icono de Soluciones TI"></i>
+                            <h5 class="card-title fw-bold">Soluciones TI</h5>
+                            <p class="card-text">Ofrecemos servicios integrales de tecnología de la información para optimizar procesos empresariales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-sitemap text-primary fa-3x mb-3" aria-label="Icono de Redes e Infraestructura"></i>
+                            <h5 class="card-title fw-bold">Redes e Infraestructura</h5>
+                            <p class="card-text">Diseñamos e implementamos infraestructuras de red robustas y escalables.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server text-danger fa-3x mb-3" aria-label="Icono de Data Center"></i>
+                            <h5 class="card-title fw-bold">Data Center</h5>
+                            <p class="card-text">Proporcionamos soluciones de data center para almacenamiento y gestión de datos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-network-wired text-warning fa-3x mb-3" aria-label="Icono de Diseño e Implementación de Networking"></i>
+                            <h5 class="card-title fw-bold">Diseño e Implementación de Networking</h5>
+                            <p class="card-text">Creamos soluciones personalizadas de networking para conectar tu negocio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg animated fadeIn" data-aos="fade-up">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt text-info fa-3x mb-3" aria-label="Icono de Seguridad Electrónica"></i>
+                            <h5 class="card-title fw-bold">Seguridad Electrónica</h5>
+                            <p class="card-text">Implementamos sistemas avanzados de seguridad electrónica, incluyendo control de acceso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+            <!-- Compromiso -->
+            <p class="lead animated fadeIn mt-5" data-aos="fade-up">
+                En NetSystems nuestro compromiso es brindar <strong>soluciones tecnológicas confiables y de alta calidad en todo Chancay - Perú</strong>,
+                garantizando la seguridad y eficiencia en cada proyecto.
+                Trabajamos con <strong>cableado estructurado</strong> (UTP, coaxial y fibra óptica), adaptándonos a
+                las necesidades específicas de nuestros clientes del país con
+                <strong>enlaces aéreos o cableados</strong>.
+            </p>
+
+            <!-- Cierre y Contacto -->
+            <p class="lead animated fadeIn fw-bold mt-4" data-aos="fade-up">
+                <i class="bi bi-telephone-fill text-danger me-2"></i> <a class="contacto"
+                    href="https://wa.link/09xsth" target="_blank"><strong>Contáctanos</strong></a> y descubre cómo
+                podemos ayudarte.
+            </p>
+        </div>
+    </div>
+
+    <!-- Nueva estructura de la sección de información -->
+    <div class="row mt-5 text-center company-info" data-aos="flip-up">
+        <div class="col-md-3">
+            <div class="info-box animated fadeInLeft">
+                <i class="fas fa-broadcast-tower icon"></i>
+                <h3>Misión</h3>
+                <p>Conectar a personas y empresas Peruanas con soluciones innovadoras en redes y telecomunicaciones,
+                    garantizando calidad y seguridad en cada servicio.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box animated fadeIn" data-aos="flip-up">
+                <i class="fas fa-eye icon"></i>
+                <h3>Visión</h3>
+                <p>Ser NetSystems el líder en telecomunicaciones en la región, ofreciendo tecnología de vanguardia y un
+                    servicio excepcional a nuestros clientes.</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info-box animated fadeInRight" data-aos="flip-up">
+                <i class="fas fa-handshake icon"></i>
+                <h3>Valores</h3>
+                <p>Compromiso, innovación y excelencia son nuestros pilares para construir relaciones de confianza
+                    con nuestros clientes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de clientes destacados con slider -->
+    <div class="row mt-5 text-center">
+        <div class="col-md-12">
+            <h2 class="display-4 animated fadeIn fw-bold clientes-tittle" data-aos="fade-up">
+                Algunos de nuestros clientes
+            </h2>
+            <div id="clientsCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner">
+                    <div v-for="(chunk, index) in chunkedClients" :key="index" class="carousel-item"
+                        :class="{ active: index === 0 }" data-bs-interval="3000">
+                        <div class="row justify-content-center">
+                            <div v-for="client in chunk" :key="client.id"
+                                class="col-lg-3 col-md-4 col-6 text-center">
+                                <img :src="client.logo" :alt="client.name" class="img-fluid client-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#clientsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#clientsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </template>
 
 <script>
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 export default {
     name: 'ConocenosPage',
     data() {
@@ -215,6 +304,12 @@ export default {
             once: false, // Permite que la animación se active en ambos sentidos (subida y bajada)
             mirror: true // Hace que la animación también se reproduzca al volver a ver el elemento en el viewport
         })
+    },
+    methods: {
+        handleImageError(event, imageName) {
+            console.error(`Error loading image: ${imageName}`);
+            event.target.src = require('../assets/img/about-2.png'); // Ruta a una imagen de respaldo
+        }
     },
     computed: {
         // Divide los clientes en grupos de 4 para el carrusel
@@ -542,4 +637,32 @@ export default {
     .carousel-caption p { font-size: 0.6rem; }
     .client-logo { height: 8vh; }
 }
+
+.button-group {
+    display: flex;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio entre botones (equivalente a gap-3 en Bootstrap) */
+    margin-top: 1.5rem; /* Espacio superior para separar de otros elementos */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 576px) {
+    .button-group {
+        flex-direction: column; /* Apila los botones en pantallas pequeñas */
+        align-items: stretch; /* Los botones ocupan todo el ancho */
+    }
+    .button-group .btn {
+        width: 100%; /* Botones ocupan el ancho completo en móviles */
+        text-align: center;
+    }
+}
+
+/* Opcional: Ajustar el tamaño de los botones para mayor consistencia */
+.btn {
+    font-size: 1rem; /* Tamaño de fuente consistente */
+    padding: 0.5rem 1.5rem; /* Padding uniforme */
+    border-radius: 0.375rem; /* Bordes redondeados (ajusta según tu diseño) */
+}
+
 </style>

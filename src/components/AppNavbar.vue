@@ -28,25 +28,20 @@
                 <i class="fas fa-star me-1"></i>Beneficios
               </router-link>
 
-              <!--<router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
-                <i class="fas fa-envelope me-1"></i>Contacto
-              </router-link>-->
-
               <li class="nav-item">
-                <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos()">
+                <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos">
                   <i class="fas fa-user-group me-1"></i>Conócenos
                 </router-link>
               </li>
-              
 
               <li class="nav-item">
-                <router-link to="/about" class="nav-link" @click="closeNavbarAbout()">
-                  <i class="fas fa-headset me-1"></i> Soporte
+                <router-link to="/about" class="nav-link" @click="closeNavbarAbout">
+                  <i class="fas fa-headset me-1"></i>Soporte
                 </router-link>
               </li>
 
               <li class="nav-item">
-                <router-link to="/cobertura" class="nav-link" @click="closeNavbarCobertura()">
+                <router-link to="/cobertura" class="nav-link" @click="closeNavbarCobertura">
                   <i class="fas fa-wifi me-1"></i>Cobertura
                 </router-link>
               </li>
@@ -120,6 +115,18 @@ export default {
       }
     },
   },
+  mounted() {
+    // Escuchar el evento close-navbar para cerrar el navbar
+    document.addEventListener('close-navbar', () => {
+      this.closeNavbar();
+    });
+  },
+  beforeUnmount() {
+    // Limpiar el event listener para evitar fugas de memoria
+    document.removeEventListener('close-navbar', () => {
+      this.closeNavbar();
+    });
+  },
 };
 </script>
 
@@ -178,7 +185,6 @@ export default {
   margin-top: auto;
 }
 
-
 .nav-link {
   color: #fff;
   font-weight: 600;
@@ -224,6 +230,4 @@ export default {
 .navbar-collapse:not(.show) {
   animation: slideUp 0.7s;
 }
-
-
 </style>

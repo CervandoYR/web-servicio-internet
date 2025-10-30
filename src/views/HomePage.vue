@@ -1,10 +1,223 @@
 <template>
+    <!-- Header Carousel Start -->
+    <section class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img class="w-100" src="../assets/img/carousel-1.jpeg" alt="Soluciones TI en Chancay y Perú"
+                        title="Servitek Technologies Perú" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h6 class="text-white mb-md-3">Nos especializamos en:</h6>
+                            <h2 class="text-white text-uppercase mb-md-3">Data center y soluciones TI</h2>
+                            
+                            <router-link to="/conocenos" class="btn btn-primary py-md-3 px-md-5 mt-2">Descubra más</router-link>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img class="w-100" src="../assets/img/carousel-2.jpeg"
+                        alt="Seguridad Electrónica y Data Center en Chancay y Perú"
+                        title="Servitek Technologies Chancay" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h6 class="text-white mb-md-3">Nos especializamos en:</h6>
+                            <h2 class="text-white text-uppercase mb-md-3">Redes y Seguridad</h2>
+                            <router-link to="/conocenos" class="btn btn-primary py-md-3 px-md-5 mt-2">Descubra más</router-link>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img class="w-100" src="../assets/img/carousel-3.jpeg"
+                        alt="Seguridad Electrónica y Data Center en Chancay y Perú"
+                        title="Servitek Technologies Chancay" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h6 class="text-white mb-md-3">Nos especializamos en:</h6>
+                            <h2 class="text-white text-uppercase mb-md-3">Seguridad electrónica</h2>
+                            <router-link to="/conocenos" class="btn btn-primary py-md-3 px-md-5 mt-2">Descubra más</router-link>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img class="w-100" src="../assets/img/carousel-4.jpeg"
+                        alt="Seguridad Electrónica y Data Center en Chancay y Perú"
+                        title="Servitek Technologies Chancay" loading="lazy">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h6 class="text-white mb-md-3">Nos especializamos en:</h6>
+                            <h2 class="text-white text-uppercase mb-md-3">Soluciones
+                                tecnológicas</h2>
+                            <router-link to="/conocenos" class="btn btn-primary py-md-3 px-md-5 mt-2">Descubra más</router-link>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" role="button" data-bs-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" role="button" data-bs-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- Header Carousel End -->
+
+    <!-- About Start -->
+    <section class="container-fluid py-4 py-md-5 about-section">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-img position-relative overflow-hidden rounded-4">
+                        <img class="w-100 h-100 img-fluid" src="../assets/img/about2.jpeg"
+                            alt="Soluciones TI en Chancay y Perú" title="NetSystems Perú y Chancay" loading="lazy"
+                            style="object-fit: cover; min-height: 400px;">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-text bg-white p-4 p-lg-5 rounded-4 shadow-sm">
+                        <h6 class="text-primary text-uppercase mb-3 fs-6" style="letter-spacing: 3px;">Sobre Nosotros
+                        </h6>
+                        <h2 class="h2 fs-3 fw-bold mb-4 text-wrap-balance">Soluciones Tecnológicas Avanzadas en todo el
+                            Perú</h2>
+                        <p class="lead fs-5 text-muted"><strong>NetSystems</strong> es líder en soluciones tecnológicas
+                            en Chancay y todo el Perú. Nos especializamos en proporcionar conectividad confiable,
+                            infraestructura de redes de última generación y sistemas de seguridad avanzados, respaldados
+                            por un equipo de profesionales altamente capacitados y un soporte técnico disponible 24/7.
+                        </p>
+                        <p class="fs-6 text-muted mb-4">Nuestros servicios incluyen:</p>
+                        <ul class="fs-6 text-muted mb-4 ps-4">
+                            <li><strong>Instalaciones de HFC y FTTH</strong>: Redes de alta velocidad para hogares y
+                                empresas.</li>
+                            <li><strong>Empalmes de fibra óptica</strong>: Conexiones precisas para una señal
+                                ininterrumpida.</li>
+                            <li><strong>Sistemas de seguridad electrónica</strong>: Cámaras de vigilancia y soluciones
+                                integrales para proteger tu hogar o negocio.</li>
+                            <li><strong>Data centers y cableado estructurado</strong>: Infraestructura robusta para
+                                optimizar el rendimiento de tus redes.</li>
+                            <li><strong>Mantenimiento y soporte técnico</strong>: Atención personalizada para garantizar
+                                la estabilidad de tus servicios.</li>
+                        </ul>
+                        <p class="fs-6 text-muted mb-4">En <strong>NetSystems</strong>, nuestro compromiso es ofrecer
+                            tecnología de vanguardia que impulse el crecimiento de nuestros clientes, desde pequeñas
+                            empresas hasta grandes corporaciones, con soluciones adaptadas a las necesidades de Chancay
+                            y todo el Perú.</p>
+                        <div class="row g-3 mb-4">
+                            <div class="col-6">
+                                <img class="img-fluid rounded-3" src="../assets/img/about-3.jpeg"
+                                    alt="Fibra Óptica en Chancay y Perú" title="Fibra Óptica NetSystems" loading="lazy"
+                                    @error="handleImageError($event, 'about-1')">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid rounded-3" src="../assets/img/about-5.jpeg"
+                                    alt="Seguridad Electrónica en Chancay y Perú"
+                                    title="Seguridad Electrónica NetSystems" loading="lazy"
+                                    @error="handleImageError($event, 'about-2')">
+                            </div>
+                        </div>
+                        <!-- Contenedor para los botones -->
+                        <div class="button-group d-flex gap-3 flex-wrap">
+                            <router-link to="/about" class="btn btn-primary py-2 px-4">Contáctanos</router-link>
+                            <a href="https://w.app/gsaeeq" class="btn btn-outline-primary py-2 px-4"
+                                target="_blank">Realice su cotización</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About End -->
+
+<!-- Feature Start -->
+<section class="container-fluid py-5 py-md-5 feature-section">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 shadow-sm rounded-4 border-0 transition-hover">
+                    <div class="card-body p-4 d-flex align-items-center">
+                        <div class="feature-icon flex-shrink-0 bg-primary bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle me-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-network-wired fa-3x" aria-label="Icono de Soluciones TI y Redes"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title mb-2 fs-5 fw-semibold">TI y Redes</h3>
+                            <p class="card-text text-muted mb-0">Soluciones TI y redes de alto rendimiento en
+                                Chancay y Perú.</p>
+                            <button class="btn btn-primary py-md-3 px-md-5 mt-2" @click="scrollToPlans" data-aos="fade-up" data-aos-delay="200">
+                                Ver Planes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 shadow-sm rounded-4 border-0 transition-hover">
+                    <div class="card-body p-4 d-flex align-items-center">
+                        <div class="feature-icon flex-shrink-0 bg-primary bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle me-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-server fa-3x" aria-label="Icono de Data Center y Seguridad"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title mb-2 fs-5 fw-semibold">Data Center y Seguridad</h3>
+                            <p class="card-text text-muted mb-0">Data centers y seguridad electrónica avanzada en
+                                Perú.</p>
+                            <router-link to="/conocenos" class="btn btn-primary py-md-3 px-md-5 mt-2">Conócenos</router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 shadow-sm rounded-4 border-0 transition-hover">
+                    <div class="card-body p-4 d-flex align-items-center">
+                        <div class="feature-icon flex-shrink-0 bg-primary bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle me-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-headset fa-3x" aria-label="Icono de Fibra Óptica y Soporte"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title mb-2 fs-5 fw-semibold">Fibra Óptica y Soporte</h3>
+                            <p class="card-text text-muted mb-0">Internet de fibra óptica en Chancay con soporte
+                                24/7.</p>
+                            <router-link to="/about" class="btn btn-primary py-md-3 px-md-5 mt-2">Soporte</router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100 shadow-sm rounded-4 border-0 transition-hover">
+                    <div class="card-body p-4 d-flex align-items-center">
+                        <div class="feature-icon flex-shrink-0 bg-primary bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle me-3"
+                            style="width: 60px; height: 60px;">
+                            <i class="fa fa-globe fa-3x" aria-label="Icono de Cobertura"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="card-title mb-2 fs-5 fw-semibold">Cobertura</h3>
+                            <p class="card-text text-muted mb-0">Cobertura total en Chancay sujeto a disponibilidad</p>
+                            <router-link to="/cobertura" class="btn btn-primary py-md-3 px-md-5 mt-2">Cobertura</router-link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Feature End -->
+
+
+
     <div id="home" class="home-page">
         <!-- Hero Section -->
         <section class="hero-section text-center d-flex align-items-center justify-content-center">
             <div class="hero-content container">
                 <h1 class="hero-title" data-aos="fade-down">
-                    Internet <span class="highlight">Rápido</span> en <span class="highlight">Chancay</span> con Fibra Óptica 100% - NetSystems
+                    Internet <span class="highlight">Rápido</span> en <span class="highlight">Chancay</span> con Fibra
+                    Óptica 100% NetSystems
                 </h1>
                 <p class="hero-subtitle" data-aos="fade-up">
                     Servicio de internet en Chancay con conexión confiable para tu hogar o negocio. ¡Instalación gratis
@@ -19,48 +232,37 @@
         <!-- Beneficios con Carrusel de Tarjetas -->
         <section class="benefits-section container py-5">
             <h2 class="section-title text-center" data-aos="fade-up">
-                BENEFICIOS DE NETSYSTEMS <span class="highlight2">100% FIBRA ÓPTICA</span> EN <span class="highlight2">CHANCAY</span>
+                BENEFICIOS DE NETSYSTEMS <span class="highlight2">100% FIBRA ÓPTICA</span> EN <span
+                    class="highlight2">CHANCAY</span>
             </h2>
             <div id="benefitsCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
                 <div class="carousel-inner">
-                    <div
-                        v-for="(benefit, index) in benefits"
-                        :key="benefit.id"
-                        class="carousel-item"
-                        :class="{ active: index === 0 }"
-                        data-bs-interval="3000"
-                    >
+                    <div v-for="(benefit, index) in benefits" :key="benefit.id" class="carousel-item"
+                        :class="{ active: index === 0 }" data-bs-interval="3000">
                         <div class="benefit-card">
-                            <img
-                                :src="benefit.image"
-                                class="benefit-img"
+                            <img :src="benefit.image" class="benefit-img"
                                 :alt="benefit.title + ' - servicio de internet en Chancay'"
-                                :title="benefit.title + ' en Chancay'"
-                                @error="handleImageError($event, benefit.id)"
-                            >
+                                :title="benefit.title + ' en Chancay'" @error="handleImageError($event, benefit.id)"
+                                loading="lazy">
                             <h3 class="benefit-title">{{ benefit.title }}</h3>
                             <p class="benefit-text">{{ benefit.description }}</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#benefitsCarousel"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#benefitsCarousel" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#benefitsCarousel"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
                 <div class="carousel-indicators">
-                    <button
-                        v-for="(benefit, index) in benefits"
-                        :key="benefit.id"
-                        type="button"
-                        :data-bs-target="'#benefitsCarousel'"
-                        :data-bs-slide-to="index"
-                        :class="{ active: index === 0 }"
-                        :aria-label="'Diapositiva ' + (index + 1)"
-                    ></button>
+                    <button v-for="(benefit, index) in benefits" :key="benefit.id" type="button"
+                        :data-bs-target="'#benefitsCarousel'" :data-bs-slide-to="index" :class="{ active: index === 0 }"
+                        :aria-label="'Diapositiva ' + (index + 1)"></button>
                 </div>
             </div>
         </section>
@@ -79,13 +281,9 @@
                     <div class="plan-card">
                         <h3 class="plan-title">{{ plan.name }}</h3>
                         <p class="plan-speed">{{ plan.speed }} Mbps</p>
-                        <img
-                            :src="plan.image"
-                            :alt="plan.name + ' - internet en Chancay'"
-                            :title="plan.name + ' en Chancay'"
-                            class="plan-img"
-                            @error="handleImageError($event, plan.id)"
-                        >
+                        <img :src="plan.image" :alt="plan.name + ' - internet en Chancay'"
+                            :title="plan.name + ' en Chancay'" class="plan-img"
+                            @error="handleImageError($event, plan.id)" loading="lazy">
                         <p class="plan-price">{{ plan.price }} / mes</p>
                         <button class="btn btn-cta-plan" @click="selectPlan(plan)">¡Contrata Ahora!</button>
                     </div>
@@ -99,7 +297,7 @@
         <!-- Info Extra -->
         <section class="info-section container py-5" id="info">
             <h2 class="section-title text-center" data-aos="fade-up">
-                ¿POR QUÉ ELEGIR NUESTRO SERVICIO DE INTERNET EN CHANCAY? 🚀
+                ¿POR QUÉ ELEGIR NUESTRO SERVICIO DE <span class="highlight2">INTERNET</span> EN CHANCAY? 🚀
             </h2>
             <div class="row g-4">
                 <div v-for="info in info" :key="info.id" class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
@@ -112,22 +310,20 @@
             </div>
         </section>
         
-        <!-- Contacto 
-        <section class="contact-section container py-5" id="contacto">
-            <ContactPage />
-        </section>-->
 
         <!-- Texto SEO Mejorado -->
         <section class="seo-text container py-4" data-aos="fade-up">
             <h2 class="seo-title">Internet de Fibra Óptica en Chancay con NetSystems</h2>
             <p class="seo-intro">
-                Descubre el mejor <strong>servicio de internet en Chancay</strong> con NetSystems, líder en tecnología de
+                Descubre el mejor <strong>servicio de internet en Chancay</strong> con NetSystems, líder en tecnología
+                de
                 <strong>fibra óptica</strong>. Ofrecemos conexión rápida y confiable para hogares, negocios y gamers en
                 toda la región.
             </p>
             <h3 class="seo-subtitle">Ventajas de Nuestro Servicio</h3>
             <ul class="seo-list">
-                <li><strong>Velocidad ultrarrápida</strong>: Hasta 600 Mbps para streaming y gaming sin interrupciones.</li>
+                <li><strong>Velocidad ultrarrápida</strong>: Hasta 600 Mbps para streaming y gaming sin interrupciones.
+                </li>
                 <li><strong>Cobertura total en Chancay</strong>: Desde el centro hasta zonas rurales, sin cortes.</li>
                 <li><strong>Instalación gratis</strong>: Sin costos adicionales al contratar cualquier plan.</li>
                 <li><strong>Soporte local 24/7</strong>: Asistencia técnica personalizada en Chancay.</li>
@@ -154,10 +350,11 @@ export default {
     //components: { ContactPage },
     data() {
         return {
+
             benefits: [
                 { id: 1, title: "Velocidad Ultra Rápida", description: "Hasta 600 Mbps simétricos para streaming, gaming y trabajo en Chancay.", image: require("../assets/banner.png") },
-                { id: 2, title: "Cobertura Total en Chancay", description: "Conexión estable en todos los barrios, desde el centro hasta zonas rurales.", image: require("../assets/fibra.webp") },
-                { id: 3, title: "Soporte Local 24/7", description: "Asistencia técnica en Chancay, disponible en cualquier momento.", image: require("../assets/soporte.webp") }
+                { id: 2, title: "Cobertura Total en Chancay", description: "Conexión estable en todos los barrios, desde el centro hasta zonas rurales.", image: require("../assets/fibra.jpeg") },
+                { id: 3, title: "Soporte Local 24/7", description: "Asistencia técnica en Chancay, disponible en cualquier momento.", image: require("../assets/soporte.jpeg") }
             ],
             plans: [
                 { id: 1, name: "INTERNET 100% FIBRA", speed: 200, price: "S/ 50", image: require("../assets/routerwifi.jpg"), link: "https://wa.link/ce4m72" },
@@ -177,6 +374,14 @@ export default {
             once: true,
             mirror: false
         });
+        // Inicializar explícitamente el carrusel de cabecera
+        const headerCarousel = document.querySelector('#header-carousel');
+        if (headerCarousel) {
+            new window.bootstrap.Carousel(headerCarousel, {
+                ride: 'carousel',
+                interval: 3000
+            });
+        }
     },
     methods: {
         scrollToPlans() {
@@ -209,9 +414,67 @@ export default {
     color: #ffcc00;
     font-weight: 700;
 }
+
 .highlight2 {
     color: #ff0000;
     font-weight: 700;
+}
+
+/* Header Carousel */
+.carousel-item {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 70vh; /* Altura máxima en pantallas grandes */
+}
+
+/* Aumentar el tamaño de las imágenes en móviles */
+@media (max-width: 576px) {
+    /* Ajustes para el carrusel de cabecera (#header-carousel) */
+    #header-carousel .carousel-item {
+        min-height: 50vh; /* Altura mínima del contenedor en móviles */
+    }
+    #header-carousel .carousel-item img {
+        min-height: 50vh; /* Asegura que la imagen sea más grande en el carrusel de cabecera */
+        object-fit: cover; /* Mantiene la proporción y cubre el contenedor */
+    }
+    #header-carousel .carousel-caption {
+        padding: 1rem; /* Ajustar padding para mejor legibilidad en móviles */
+    }
+    #header-carousel .carousel-caption h4 {
+        font-size: 1.2rem; /* Reducir ligeramente el tamaño del texto para que quepa */
+    }
+    #header-carousel .carousel-caption .btn {
+        font-size: 0.9rem; /* Ajustar tamaño de botón */
+        padding: 0.5rem 1rem; /* Botones más pequeños en móviles */
+    }
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 0.8;
 }
 
 /* Hero Section */
@@ -515,6 +778,7 @@ export default {
     }
 }
 
+
 /* Planes */
 .plans-section .plan-card {
     background: white;
@@ -606,12 +870,6 @@ export default {
     font-size: 1rem;
     font-weight: 400;
     color: #555;
-}
-
-/* Contact Section */
-.contact-section {
-    background: #f8f9fa;
-    padding: 3rem 0;
 }
 
 /* Texto SEO */
@@ -890,5 +1148,31 @@ export default {
     .benefits-section .benefit-text {
         font-size: 0.85rem;
     }
+    .button-group {
+    display: flex;
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    align-items: center; /* Centra verticalmente */
+    gap: 1rem; /* Espacio entre botones (equivalente a gap-3 en Bootstrap) */
+    margin-top: 1.5rem; /* Espacio superior para separar de otros elementos */
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 576px) {
+    .button-group {
+        flex-direction: column; /* Apila los botones en pantallas pequeñas */
+        align-items: stretch; /* Los botones ocupan todo el ancho */
+    }
+    .button-group .btn {
+        width: 100%; /* Botones ocupan el ancho completo en móviles */
+        text-align: center;
+    }
+}
+
+/* Opcional: Ajustar el tamaño de los botones para mayor consistencia */
+.btn {
+    font-size: 1rem; /* Tamaño de fuente consistente */
+    padding: 0.5rem 1.5rem; /* Padding uniforme */
+    border-radius: 0.375rem; /* Bordes redondeados (ajusta según tu diseño) */
+}
 }
 </style>
