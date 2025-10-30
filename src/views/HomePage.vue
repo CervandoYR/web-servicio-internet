@@ -2,7 +2,7 @@
     <!-- Header Carousel Start -->
      <div id="home" class="home-page">
     <section class="container-fluid p-0">
-        <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div id="header-carousel" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="3000">
                     <img class="w-100" src="../assets/img/carousel-1.jpeg" alt="Soluciones TI en Chancay y Perú"
@@ -238,7 +238,7 @@
                 BENEFICIOS DE NETSYSTEMS <span class="highlight2">100% FIBRA ÓPTICA</span> EN <span
                     class="highlight2">CHANCAY</span>
             </h2>
-            <div id="benefitsCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+            <div id="benefitsCarousel" class="carousel slide"  data-aos="fade-up">
                 <div class="carousel-inner">
                     <div v-for="(benefit, index) in benefits" :key="benefit.id" class="carousel-item"
                         :class="{ active: index === 0 }" data-bs-interval="3000">
