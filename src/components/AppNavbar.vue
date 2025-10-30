@@ -27,6 +27,10 @@
               <router-link to="/" class="nav-link" @click="scrollToSection('info')">
                 <i class="fas fa-star me-1"></i>Beneficios
               </router-link>
+              
+              <router-link to="/" class="nav-link" @click="scrollToSection('contacto')">
+                <i class="fas fa-comment-dots me-1"></i>Contactanos
+              </router-link>
 
               <li class="nav-item">
                 <router-link to="/conocenos" class="nav-link" @click="closeNavbarConocenos">

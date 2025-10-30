@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="button-group d-flex gap-3 flex-wrap">
                                     <router-link to="/about" class="btn btn-primary py-2 px-4">Contáctanos</router-link>
-                                    <a href="https://w.app/gsaeeq" class="btn btn-outline-primary py-2 px-4"
+                                    <a href="https://wa.me/51924076526" class="btn btn-outline-primary py-2 px-4"
                                         target="_blank">Realice su cotización</a>
                                 </div>
                             </div>

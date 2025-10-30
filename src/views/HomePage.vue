@@ -310,6 +310,9 @@
             </div>
         </section>
         
+        <section class="contact-section container py-5" id="contacto">
+            <ContactPage />
+        </section>
 
         <!-- Texto SEO Mejorado -->
         <section class="seo-text container py-4" data-aos="fade-up">
@@ -341,13 +344,13 @@
 </template>
 
 <script>
-//import ContactPage from '../views/ContactPage.vue';
+import ContactPage from '../views/ContactPage.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 export default {
     name: 'HomePage',
-    //components: { ContactPage },
+    components: { ContactPage },
     data() {
         return {
 
