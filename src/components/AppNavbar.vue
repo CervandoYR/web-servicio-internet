@@ -16,7 +16,7 @@
           <!-- Enlaces del navbar -->
           <div class="collapse navbar-collapse" :class="{ 'show': showNavbar }">
             <ul class="navbar-nav ms-auto">
-              <router-link to="/" class="nav-link" @click="scrollToHome">
+              <router-link to="/" class="nav-link" @click="scrollToSection('home')">
                 <i class="fas fa-house me-1"></i>Inicio
               </router-link>
 

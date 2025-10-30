@@ -1,5 +1,6 @@
 <template>
     <!-- Header Carousel Start -->
+     <div id="home" class="home-page">
     <section class="container-fluid p-0">
         <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -15,6 +16,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="carousel-item" data-bs-interval="3000">
                     <img class="w-100" src="../assets/img/carousel-2.jpeg"
                         alt="Seguridad Electrónica y Data Center en Chancay y Perú"
@@ -67,6 +69,7 @@
                 </div>
             </a>
         </div>
+        
     </section>
     <!-- Header Carousel End -->
 
@@ -211,7 +214,7 @@
 
 
 
-    <div id="home" class="home-page">
+    
         <!-- Hero Section -->
         <section class="hero-section text-center d-flex align-items-center justify-content-center">
             <div class="hero-content container">
